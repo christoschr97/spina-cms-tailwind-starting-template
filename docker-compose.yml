@@ -8,6 +8,8 @@ services:
       - .env
   science-blog:
     build: .
+    tty: true
+    stdin_open: true
     volumes:
       - .:/myapp
     ports:
@@ -18,9 +20,12 @@ services:
       - db
   tailwindcss:
     build: .
+    tty: true
+    stdin_open: true
     volumes:
       - .:/myapp
     env_file:
       - .env
     depends_on:
       - db
+    command: "bin/rails tailwindcss:watch"

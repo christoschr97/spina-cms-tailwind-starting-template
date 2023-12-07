@@ -1,24 +1,21 @@
-# README
+# Spina CMS, Docker and TailwindCSS Starting Template
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repository is a starting template for a web application using [Spina CMS](https://www.spinacms.com/), Docker, Docker-compose, Puma, Postgres and [TailwindCSS](https://tailwindcss.com/). It provides an easy-to-use content management system with a modern TailwindCSS frontend.
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+- Integrated Spina CMS for content management.
+- Styled with TailwindCSS for rapid and responsive design.
+- Ready-to-use Docker configuration for easy development and deployment.
+- Pre-configured with PostgreSQL as the database.
 
-* System dependencies
+## Installation
 
-* Configuration
+First build the images
 
-* Database creation
+`docker-compose build`
 
-* Database initialization
+## Run
 
-* How to run the test suite
+Run the project by running the 
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

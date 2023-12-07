@@ -1,2 +1,20 @@
-<% presenter = Spina::MenuPresenter.new(Spina::Page.all) %>
-<%= presenter.to_html %>
+<nav class="bg-white shadow">
+  <div class="container mx-auto px-6 py-3">
+    <div class="flex items-center justify-center space-x-4">
+    
+      <!-- Logo placeholder -->
+      <div class="flex-shrink-0">
+        <a href="/" class="text-xl font-bold">SCIENCE-BLOG</a>
+      </div>
+
+      <!-- Navigation items -->
+      <% if Spina::Navigation.find_by(name: 'main') %>
+        <% Spina::Navigation.find_by(name: 'main').navigation_items.sorted.live.each do |nav_item| %>
+          <div>
+            <%= link_to nav_item.page.title.upcase, nav_item.materialized_path, class: "text-gray-800 hover:text-gray-600" %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</nav>
