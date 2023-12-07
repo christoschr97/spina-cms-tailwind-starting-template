@@ -1,20 +1,20 @@
-<nav class="bg-white shadow">
+<nav class="bg-white border-b border-gray-200">
   <div class="container mx-auto px-6 py-3">
-    <div class="flex items-center justify-center space-x-4">
-    
+    <div class="flex items-center justify-between">
       <!-- Logo placeholder -->
       <div class="flex-shrink-0">
-        <a href="/" class="text-xl font-bold">SCIENCE-BLOG</a>
+        <a href="/" class="text-xl font-bold">Your Name</a>
       </div>
-
       <!-- Navigation items -->
-      <% if Spina::Navigation.find_by(name: 'main') %>
-        <% Spina::Navigation.find_by(name: 'main').navigation_items.sorted.live.each do |nav_item| %>
-          <div>
-            <%= link_to nav_item.page.title.upcase, nav_item.materialized_path, class: "text-gray-800 hover:text-gray-600" %>
-          </div>
+      <div class="flex items-center space-x-4">
+        <% if Spina::Navigation.find_by(name: 'main') %>
+          <% Spina::Navigation.find_by(name: 'main').navigation_items.sorted.live.each do |nav_item| %>
+            <div>
+              <%= link_to nav_item.page.title.upcase, nav_item.materialized_path, class: "hover:text-gray-600 hover:text-gray-900" %>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
   </div>
 </nav>
